@@ -36,53 +36,14 @@
  */
 package com.github.model;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+public class UserExtend extends User {
 
-import java.io.Serializable;
-import java.util.Date;
+	private String address;
 
-public class User implements Serializable {
-
-	private Integer id;
-	private String name;
-	private Integer age;
-	private Date createTime;
-	private static final long serialVersionUID = -5810312534190154788L;
-
-	public User() {
+	public String getAddress() {
+		return address;
 	}
-	public User(Integer id, String name, Integer age) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.createTime = new Date();
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-	public Date getCreateTime() {
-		return createTime;
-	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	public void setAddress(String address) {
+		this.address = address;
 	}
 }

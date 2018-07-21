@@ -1,16 +1,10 @@
 package com.github.service;
 
-import com.github.model.User;
-import com.github.service.hystrix.UserServiceHystrix;
+import com.github.service.hystrix.UserServiceFallback;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name = "SERVICE-PRODUCER", fallback = UserServiceHystrix.class)
-public interface UserService {
-
-	@GetMapping("user/{id}")
-	User getUser(@PathVariable("id") Integer id);
-
+@RequestMapping("user")
+@FeignClient(name = "SERVICE-PRODUCER", fallback = UserServiceFallback.class)
+public interface UserService extends UserServiceFeign {
 }
