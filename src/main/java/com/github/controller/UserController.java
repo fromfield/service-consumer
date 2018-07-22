@@ -62,6 +62,11 @@ public class UserController {
 		return "service-consumer";
 	}
 
+	@RequestMapping("hello")
+	public String hello() {
+		return userService.hello();
+	}
+
 	@ResponseBody
 	@GetMapping("{id}")
 	public Object userInfo(@PathVariable Integer id) {
