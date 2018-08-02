@@ -38,6 +38,7 @@ package com.github.model;
 
 public class UserExtend extends User {
 
+	private static final long serialVersionUID = 3660304013503365006L;
 	private String address;
 
 	public String getAddress() {
